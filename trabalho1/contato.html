@@ -5,7 +5,92 @@
     <title>Trab1 - Contato</title>
   </head>
   <body>
-    <nav></nav>
+    <nav>
+      <a href="index.html">&lt; &lt; Voltar para página inicial</a>
+    </nav>
+    <main>
+      <h2>Entre em contato</h2>
+      <form action="" method="post">
+        <fieldset>
+          <legend>Dados pessoais</legend>
+          <div>
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" name="nome" />
+          </div>
+          <div>
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div>
+            <label for="idade">Idade: </label>
+            <input type="number" id="idade" name="idade" />
+          </div>
+          <div>
+            <label for="telefone">Telefone: </label>
+            <input type="tel" id="telefone" name="telefone" />
+          </div>
+          <div>
+            <label for="data-nasc">Data de nascimeto (opcional): </label>
+            <input type="date" id="data-nasc" name="data-nasc" />
+          </div>
+          <div>
+            <label for="sexo">Sexo (opcional): </label>
+            <select name="sexo" id="sexo">
+              <option value="F">Feminino</option>
+              <option value="M">Masculino</option>
+              <option value="O">Outro</option>
+            </select>
+          </div>
+          <div>
+            <label for="estado-civil">Estado civil (opcional): </label>
+            <select name="estado-civil" id="estado-civil">
+              <option value="solteiro">solteiro</option>
+              <option value="casado">casado</option>
+              <option value="divorciado">divorciado</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Dados da empresa</legend>
+          <div>
+            <label for="cnpj">CNPJ (opcional): </label>
+            <input type="text" id="cnpj" name="cnpj" />
+          </div>
+          <div>
+            <label for="razao-social">Razão Social (opcional): </label>
+            <input type="text" id="razao-social" name="razao-social" />
+          </div>
+          <div>
+            <label for="ramo-atuacao">Ramo de atuação (opcional): </label>
+            <input type="text" id="ramo-atuacao" name="ramo-atuacao" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Endereço</legend>
+          CEP (obrigatório); • Tipo de logradouro (rua, avenida, praça, etc.)
+          (obrigatório, caixa de seleção) • Logradouro (obrigatório); • Cidade
+          (obrigatório); • Estado (obrigatório);
+
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </fieldset>
+        <fieldset>
+          <legend>Descrição</legend>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </fieldset>
+        <button>Enviar</button>
+      </form>
+    </main>
     <footer>
       <p>Me contrata por favor!</p>
     </footer>
