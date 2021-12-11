@@ -15,19 +15,19 @@
           <legend>Dados pessoais</legend>
           <div>
             <label for="nome">Nome: </label>
-            <input type="text" id="nome" name="nome" />
+            <input type="text" id="nome" name="nome" required />
           </div>
           <div>
             <label for="email">Email: </label>
-            <input type="email" id="email" name="email" />
+            <input type="email" id="email" name="email" required />
           </div>
           <div>
             <label for="idade">Idade: </label>
-            <input type="number" id="idade" name="idade" />
+            <input type="number" id="idade" name="idade" required />
           </div>
           <div>
             <label for="telefone">Telefone: </label>
-            <input type="tel" id="telefone" name="telefone" />
+            <input type="tel" id="telefone" name="telefone" required />
           </div>
           <div>
             <label for="data-nasc">Data de nascimeto (opcional): </label>
@@ -67,26 +67,75 @@
         </fieldset>
         <fieldset>
           <legend>Endereço</legend>
-          CEP (obrigatório); • Tipo de logradouro (rua, avenida, praça, etc.)
-          (obrigatório, caixa de seleção) • Logradouro (obrigatório); • Cidade
-          (obrigatório); • Estado (obrigatório);
-
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div>
+            <label for="cep">CEP: </label>
+            <input type="text" id="cep" name="cep" required />
+          </div>
+          <div>
+            <label for="tipo-logradouro">Tipo de logradouro: </label>
+            <select name="tipo-logradouro" id="tipo-logradouro" required>
+              <option value="rua">Rua</option>
+              <option value="avenida">Av.</option>
+              <option value="alameda">Al.</option>
+              <option value="praca">Praça</option>
+            </select>
+          </div>
+          <div>
+            <label for="logradouro">Logradouro: </label>
+            <input type="text" id="logradouro" name="logradouro" required />
+          </div>
+          <div>
+            <label for="cidade">Cidade: </label>
+            <input type="text" id="cidade" name="cidade" required />
+          </div>
+          <div>
+            <label for="estado">Estado: </label>
+            <input type="text" id="estado" name="estado" required />
+          </div>
         </fieldset>
         <fieldset>
           <legend>Descrição</legend>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div>
+            <label for="desc"></label>
+            <textarea
+              name="desc"
+              id="desc"
+              cols="35"
+              rows="8"
+              maxlength="300"
+            ></textarea>
+          </div>
+          <div>
+            <input type="checkbox" id="viagem" name="beneficios[]" />
+            <label for="viagem">Necessita viajar?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="seguro-vida" name="beneficios[]" />
+            <label for="seguro-vida">Oferece seguro de vida?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="plano-saude" name="beneficios[]" />
+            <label for="plano-saude">Oferece plano de saúde?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="vale-refeicao" name="beneficios[]" />
+            <label for="vale-refeicao">Oferece vale refeição?</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Tipo de contratação</legend>
+          <div>
+            <input type="radio" name="tipo-contrato" id="clt" />
+            <label for="clt">CLT</label>
+          </div>
+          <div>
+            <input type="radio" name="tipo-contrato" id="pj" />
+            <label for="pj">PJ</label>
+          </div>
+          <div>
+            <input type="radio" name="tipo-contrato" id="sociedade" />
+            <label for="sociedade"> Sociedade </label>
+          </div>
         </fieldset>
         <button>Enviar</button>
       </form>
