@@ -28,7 +28,11 @@ header h1 {
 
 main {
   background-color: #eeeeee;
-  margin: 0 240px 0 240px;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -0%);
+
   padding: 48px 32px 32px 32px;
   border: 1px solid #acadad;
   border-top: none;
