@@ -17,6 +17,41 @@ main {
 
 .menu-list {
   margin-top: 32px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-list > label {
+  margin-right: 8px;
+}
+
+.menu-list > input {
+  border: 1px solid #8c8c8c;
+  border-radius: 2px;
+}
+
+input:focus {
+  box-shadow: 0 0 4px cyan;
+}
+
+.list {
+  /* width: 70%; */
+  /* height: 100%; */
+  /* margin-top: 24px; */
+}
+
+li {
+  height: 42px;
+  width: 360px;
+  border: 1px solid #98a0e6;
+  background-color: #bfd9f2;
+  margin-top: 12px;
+  padding: 0 12px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 button {
