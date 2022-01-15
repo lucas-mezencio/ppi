@@ -1,0 +1,52 @@
+main {
+  width: 480px;
+  height: 540px;
+  background-color: white;
+  border: 1px solid #888;
+  margin-top: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+section h2 {
+  margin: 24px 0 0 18px;
+  font-size: 1.4rem;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div label {
+  margin: 18px 32px 0 18px;
+}
+
+div input {
+  margin: 12px 32px 0 18px;
+}
+
+form button {
+  margin-left: 18px;
+  margin-bottom: 18px;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+}
