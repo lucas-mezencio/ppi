@@ -54,8 +54,8 @@ button.btnActive {
   display: none;
 }
 
-section .tabActive {
-  display: block;
+.tabActive {
+  display: block !important;
 }
 
 main {

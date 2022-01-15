@@ -14,8 +14,8 @@
     <nav>
       <ul>
         <li><button data-tabname="cont-a">Conteúdo A</button>|</li>
-        <li><button data-tabname="cont-b">Conteúdo A</button>|</li>
-        <li><button data-tabname="cont-c">Conteúdo A</button></li>
+        <li><button data-tabname="cont-b">Conteúdo B</button>|</li>
+        <li><button data-tabname="cont-c">Conteúdo C</button></li>
       </ul>
     </nav>
 
@@ -88,5 +88,38 @@
         </section>
       </div>
     </main>
+    <script>
+      // executa o codigo js quando a pagina é finalmente carregada
+      window.onload = () => {
+        const buttons = document.querySelectorAll("nav button"); //seleciona a lista de botoes de navegação
+        //itera na lista de botoes de navegação
+        for (let button of buttons) {
+          button.onclick = () => {
+            // adiciona event listener para clique
+            openTab(button.dataset.tabname); //executa a função de abrir a aba clicada
+          };
+        }
+        openTab("cont-a"); //abre a primeira pagina assim q a pagina é carregada
+
+        function openTab(tab) {
+          const lastTab = document.querySelector(".tabActive"); //seleciona ultima tab ativa
+          const lastBtn = document.querySelector(".btnActive"); //seleciona ultimo botao ativo
+
+          // testa se existe ultima tab e ultimo botao ativos
+          if (lastTab !== null && lastBtn !== null) {
+            lastTab.className = ""; // remove a classe css referente ao display da tab = display: none
+            lastBtn.className = ""; // remove a classe css referente ao destaque do botao
+          }
+
+          //adiciona a classe que retorna a prop display do elemento clicado
+          document.querySelector(
+            `.tabs > section[data-tabname="${tab}"]`
+          ).className = "tabActive";
+          document.querySelector(
+            `nav button[data-tabname="${tab}"]`
+          ).className = "btnActive";
+        }
+      };
+    </script>
   </body>
 </html>
