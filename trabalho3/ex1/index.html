@@ -22,23 +22,23 @@
         <button type="button" id="btnClose">Ok</button>
       </div>
     </div>
+    <script>
+      //garante que o conteudo da função seja exectudado somente quando a pag carregar
+      window.onload = () => {
+        const modal = document.getElementById("modal"); //seleciona o modal
+        const btnOpen = document.getElementById("btnOpen"); // seleciona botao de abrir
+        const btnClose = document.getElementById("btnClose"); // seleciona botão de fechar
+
+        //adiciona event listener de clique para o botão de abrir
+        btnOpen.addEventListener("click", () => {
+          modal.style.display = "block"; //mostra o modal, pela alteração de estilo css
+        });
+
+        //adiciona event listener de clique para fechar o modal
+        btnClose.addEventListener("click", () => {
+          modal.style.display = "none"; // esconte o modal, pela alteração de estilo css
+        });
+      };
+    </script>
   </body>
-  <script>
-    //garante que o conteudo da função seja exectudado somente quando a pag carregar
-    window.onload = () => {
-      const modal = document.getElementById("modal"); //seleciona o modal
-      const btnOpen = document.getElementById("btnOpen"); // seleciona botao de abrir
-      const btnClose = document.getElementById("btnClose"); // seleciona botão de fechar
-
-      //adiciona event listener de clique para o botão de abrir
-      btnOpen.addEventListener("click", () => {
-        modal.style.display = "block"; //mostra o modal, pela alteração de estilo css
-      });
-
-      //adiciona event listener de clique para fechar o modal
-      btnClose.addEventListener("click", () => {
-        modal.style.display = "none"; // esconte o modal, pela alteração de estilo css
-      });
-    };
-  </script>
 </html>
