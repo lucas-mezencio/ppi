@@ -8,11 +8,49 @@
   </head>
   <body>
     <main>
-      <section>
-        <div class="menu-list">
-          <label for="list">Lista: </label>
-        </div>
-      </section>
+      <div class="menu-list">
+        <label for="list">Lista: </label>
+        <input type="text" id="list" name="list" />
+      </div>
+      <ol class="list">
+        <li>
+          <span>item 1</span>
+          <button>⨯</button>
+        </li>
+      </ol>
     </main>
+
+    <script>
+      window.onload = () => {
+        const inputField = document.getElementById("list"); // seleciona o campo de inserção da lista
+        // adiciona evente listener de tecla pressionada e solta
+        inputField.addEventListener("keyup", (e) => {
+          // verifica se a tecla é o "enter"
+          if (e.key === "Enter") {
+            addItem(); // chama a função de adicionar item a lista
+          }
+        });
+        function addItem() {
+          const list = document.querySelector(".list"); // seleciona a lista
+
+          const newItemSpan = document.createElement("span"); //cria um elemento span
+          newItemSpan.textContent = inputField.value; //adiciona o valor do campo no elemento span criado
+
+          // cria um elemento botão pra fechar o item da lista
+          const newItemButton = document.createElement("button");
+          newItemButton.textContent = "⨯"; // adiciona o char utf de fechar
+          newItemButton.onclick = () => {
+            //adiciona o event listener de clique para o botao
+            list.removeChild(newItem); // remove o item relacionado ao botão da lista
+          };
+
+          const newItem = document.createElement("li"); //cria o item da lista
+          newItem.appendChild(newItemSpan); //adiciona o span com o valor do item
+          newItem.appendChild(newItemButton); // adiciona o botão para excluir o item
+
+          list.appendChild(newItem); //adiciona o item na lista
+        }
+      };
+    </script>
   </body>
 </html>
