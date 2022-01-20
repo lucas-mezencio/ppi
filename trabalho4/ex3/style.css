@@ -1,0 +1,16 @@
+article {
+  height: 42px;
+  padding: 6px 8px;
+}
+
+.red article {
+  background-color: #ffdddd;
+}
+
+.green article {
+  background-color: #ddffdd;
+}
+
+.blue article {
+  background-color: #ddddff;
+}
