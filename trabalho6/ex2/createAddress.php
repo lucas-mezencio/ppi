@@ -20,7 +20,7 @@ try {
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$postalCode, $address, $district, $city, $state]);
 
-  header("location: trabalho6/index.html");
+  header("location: showAddress.php");
   exit();
 } catch (Exception $e) {
   exit('Falha ao cadastrar o endereco: ' . $e->getMessage());
