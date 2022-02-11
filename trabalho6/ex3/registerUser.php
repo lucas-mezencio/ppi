@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8" />
     <title>Exercício 2</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="register.css" />
     <link rel="stylesheet" href="../main.css" />
   </head>
   <body>
