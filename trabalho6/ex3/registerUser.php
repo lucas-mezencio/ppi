@@ -1,0 +1,32 @@
+<?php
+
+
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercício 2</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../main.css" />
+  </head>
+  <body>
+    <main>
+      <form action="login.php" method="post">
+        <div>
+          <label for="user">Usuário: </label>
+          <input type="text" id="user" name="user" required />
+        </div>
+        <div>
+          <label for="password">Senha: </label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button>Entrar</button>
+      </form>
+    </main>
+  </body>
+</html>
