@@ -33,9 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Exercício 2</title>
+    <title>Registrar</title>
 
-    <link rel="stylesheet" href="register.css" />
+    <link rel="stylesheet" href="userForm.css" />
     <link rel="stylesheet" href="../main.css" />
   </head>
   <body>
