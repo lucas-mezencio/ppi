@@ -20,10 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       sexo, cep, endereco, cidade, uf)
   values (?, ?, ?, ?, ?, ?, ?, ?)
 SQL;
-  $insertPatient = <<<SQL
+  $insertPatient = <<<SQL2
   insert into paciente (peso, altura, tipo_sang, id_pessoa)
   values (?, ?, ?, ?)
-SQL;
+SQL2;
 
   try {
     $pdo->beginTransaction();
@@ -41,6 +41,10 @@ SQL;
     ])) {
       throw new Exception('Erro na inserção em paciente');
     }
+    $pdo->commit();
+
+    header("location: index.php");
+    exit();
   } catch (Exception $e) {
     $pdo->rollBack();
     if ($e->errorInfo[1] === 1062){
