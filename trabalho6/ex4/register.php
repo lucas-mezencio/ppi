@@ -15,11 +15,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $city = $_POST["city"] ?? "";
   $uf = $_POST["UF"] ?? "";
 
+  $insertPerson = <<<SQL
+  insert into pessoa (nome, email, telefone, 
+                      sexo, cep, endereco, cidade, uf)
+  values (?, ?, ?, ?, ?, ?, ?, ?)
+SQL;
+  $insertPatient = <<<SQL
+  insert into paciente (peso, altura, tipo_sang, id_pessoa)
+  values (?, ?, ?, ?)
+SQL;
+
+  try {
+    $pdo->beginTransaction();
+    $stmt1 = $pdo->prepare($insertPerson);
+    if (!$stmt1->execute([
+      $name, $email, $phone, $sex, $postalCode, $address, $city, $uf
+      ])) {
+      throw new Exception('Erro na inserção em pessoa');
+    }
+
+    $idPerson = $pdo->lastInsertId();
+    $stmt2 = $pdo->prepare($insertPatient);
+    if (!$stmt2->execute([
+      $weight, $height, $bloodType, $idPerson
+    ])) {
+      throw new Exception('Erro na inserção em paciente');
+    }
+  } catch (Exception $e) {
+    $pdo->rollBack();
+    if ($e->errorInfo[1] === 1062){
+      exit('Cadastro existente: ' . $e->getMessage());
+    }
+    else {
+      exit('Erro: ' . $e->getMessage());
+    }
+  }
 }
-
-
-
-
 ?>
 
 <!DOCTYPE html>
