@@ -38,6 +38,7 @@
     }
 
     function loginRequest() {
+        event.preventDefault();
         let formData = new FormData(document.querySelector("form"));
 
         let xhr = new XMLHttpRequest();
