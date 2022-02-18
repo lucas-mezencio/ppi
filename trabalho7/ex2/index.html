@@ -49,7 +49,7 @@
 
     <script>
       function buscaEndereco(cep) {
-        if (cep.length != 9) return;
+        if (cep.length !== 9) return;
 
         let xhr = new XMLHttpRequest();
         xhr.open("GET", "busca-endereco.php?cep=" + cep, true);
