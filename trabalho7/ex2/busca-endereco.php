@@ -32,11 +32,13 @@ SQL;
   exit('Erro inesperado: ' . $e->getMessage());
 }
 
-$result = $stmt->fetch();
-$endereco = new Endereco(
-  $result['rua'],
-  $result['bairro'],
-  $result['cidade']
-);
-
+if ($result = $stmt->fetch() != null) {
+  $endereco = new Endereco(
+    $result['rua'],
+    $result['bairro'],
+    $result['cidade']
+  );
+} else {
+  $endereco = new Endereco('', '', '');
+}
 echo json_encode($endereco);
