@@ -1,6 +1,7 @@
-create table user_login
+create table medico
 (
   id int PRIMARY KEY auto_increment,
-  email char(45) unique,
-  password varchar(255)
+  nome varchar(45) unique,
+  telefone varchar(15),
+  especialidade varchar(20)
 ) ENGINE=InnoDB;
