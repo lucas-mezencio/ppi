@@ -33,10 +33,13 @@ SQL;
 }
 
 $result = $stmt->fetch();
-$endereco = new Endereco(
-  $result['rua'],
-  $result['bairro'],
-  $result['cidade']
-);
-
+if ($result != null) {
+  $endereco = new Endereco(
+    $result['rua'],
+    $result['bairro'],
+    $result['cidade']
+  );
+} else {
+  $endereco = new Endereco('', '', '');
+}
 echo json_encode($endereco);
