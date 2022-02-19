@@ -48,10 +48,42 @@
       function infoRequest(select) {
           if (select.value === '') return;
           let xhr = new XMLHttpRequest();
-          xhr.open("GET", 'doctors.php?' + select.value, true);
+          xhr.open("GET", 'doctors.php?especialidade=' + select.value, true);
 
           xhr.onload = () => {
+            try {
+                var response = JSON.parse(xhr.responseText);
+            } catch (err) {
+                console.error("JSON invalido: " + xhr.responseText);
+            }
+            showDoctorData(response);
+          }
 
+          xhr.onerror = () => {
+              console.error("Erro na requisição, possivel falha de rede!");
+          }
+
+          xhr.send();
+      }
+
+      function showDoctorData(response) {
+          if (response.success) {
+              const doctorsSel = document.querySelector("#medico");
+              clearSelect(doctorsSel);
+              doctorsSel.disabled = false;
+
+              for (let doctor of response.doctors) {
+                  let option = document.createElement("option");
+                  option.value = doctor.nome;
+                  option.text = doctor.nome + " - " + doctor.telefone;
+                  doctorsSel.add(option);
+              }
+          }
+      }
+
+      function clearSelect(select) {
+          while (select.options.length > 0) {
+              select.remove(0);
           }
       }
     </script>
