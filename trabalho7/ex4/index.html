@@ -31,13 +31,30 @@
             </div>
             <div class="form-floating m-3">
               <select class="form-select" name="medico" id="medico" disabled>
-                <option value="teste">teste</option>
+
               </select>
               <label class="form-label" for="medico">Médico</label>
             </div>
         </form>
       </div>
     </main>
+
+    <script>
+      window.onload = () => {
+          const especialidadeSel = document.querySelector("#especialidade");
+          especialidadeSel.onchange = () => infoRequest(especialidadeSel);
+      }
+
+      function infoRequest(select) {
+          if (select.value === '') return;
+          let xhr = new XMLHttpRequest();
+          xhr.open("GET", 'doctors.php?' + select.value, true);
+
+          xhr.onload = () => {
+
+          }
+      }
+    </script>
 
   </body>
   <script
