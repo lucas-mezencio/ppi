@@ -34,10 +34,10 @@
   <script>
     window.onload = () => {
       const submitBtn = document.querySelector("button");
-      submitBtn.onclick = () => loginRequest();
+      submitBtn.onclick = (event) => loginRequest(event);
     }
 
-    function loginRequest() {
+    function loginRequest(event) {
         event.preventDefault();
         let formData = new FormData(document.querySelector("form"));
 
