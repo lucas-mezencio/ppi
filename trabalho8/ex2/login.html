@@ -41,21 +41,15 @@
         event.preventDefault();
         let formData = new FormData(document.querySelector("form"));
 
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "login.php");
-
-        xhr.onload = () => {
-            try {
-                var response = JSON.parse(xhr.responseText);
-            } catch (e) {
-                console.error("JSON invalido: " + xhr.responseText);
-                return;
-            }
-
-            loginCheck(response);
+        const options = {
+            method: "POST",
+            body: formData
         }
 
-        xhr.send(formData);
+        fetch("login.php", options)
+            .then(res => res.json())
+            .then(data => loginRequest(data))
+            .catch(err => console.log(err));
     }
 
     function loginCheck(response) {
