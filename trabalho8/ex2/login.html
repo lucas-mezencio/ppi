@@ -48,7 +48,7 @@
 
         fetch("login.php", options)
             .then(res => res.json())
-            .then(data => loginRequest(data))
+            .then(data => loginCheck(data))
             .catch(err => console.log(err));
     }
 
