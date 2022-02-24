@@ -1,0 +1,19 @@
+body {
+    background-color: #8c8c8c;
+}
+
+main {
+    /*width: 60vw;*/
+    height: 100vh;
+    background-color: white;
+
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top: 10%;*/
+    /*transform: translate(-50%, -10%);*/
+}
+
+/*.container {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
