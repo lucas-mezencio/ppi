@@ -42,28 +42,25 @@
     <script>
       window.onload = () => {
           const especialidadeSel = document.querySelector("#especialidade");
-          especialidadeSel.onchange = () => infoRequest(especialidadeSel);
+            especialidadeSel.onchange = () => infoRequest(especialidadeSel);
       }
 
-      function infoRequest(select) {
+      async function infoRequest(select) {
           if (select.value === '') return;
-          let xhr = new XMLHttpRequest();
-          xhr.open("GET", 'doctors.php?especialidade=' + select.value, true);
 
-          xhr.onload = () => {
-            try {
-                var response = JSON.parse(xhr.responseText);
-            } catch (err) {
-                console.error("JSON invalido: " + xhr.responseText);
-            }
-            showDoctorData(response);
+
+          try {
+              // 'doctors.php?especialidade=' + select.value
+              const response = await fetch(`doctors.php?especialidade=${select.value}`);
+              if (!response.ok) {
+                  throw new Error("Erro: " + response.status);
+              }
+
+              const doctors = await response.json();
+              showDoctorData(doctors);
+          } catch (err) {
+              console.log(err);
           }
-
-          xhr.onerror = () => {
-              console.error("Erro na requisição, possivel falha de rede!");
-          }
-
-          xhr.send();
       }
 
       function showDoctorData(response) {
