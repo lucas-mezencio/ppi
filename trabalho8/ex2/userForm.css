@@ -1,0 +1,50 @@
+body {
+  background-color: #eeeeee;
+}
+
+main {
+  width: 70%;
+  min-width: 320px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #ffffff;
+  border: 1px solid #cdcdcd;
+  border-radius: 16px;
+}
+
+form {
+  padding: 24px 48px 24px 24px;
+}
+
+form > div {
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+form > button {
+  margin-top: 18px;
+  width: auto;
+  padding: 2px 4px 2px 4px;
+}
+
+input {
+  width: auto;
+  height: 32px;
+  border-radius: 6px;
+}
+
+input:focus {
+  box-shadow: 0 0 10px orange;
+}
+
+label,
+button {
+  font-size: 1rem;
+}
