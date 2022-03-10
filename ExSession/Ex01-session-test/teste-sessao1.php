@@ -12,8 +12,8 @@ $_SESSION["email"] = $email;
 
 ?>
 
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <body>
   <h2>Variáveis de sessão definidas!</h2>

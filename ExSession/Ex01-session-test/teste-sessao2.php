@@ -5,7 +5,7 @@ session_start();
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <body>
 
 <?php
