@@ -36,7 +36,8 @@ header h1 {
   margin-left: 12px;
 }
 
-.nav-link {
+.nav-link,
+.clin-navlogin {
   text-decoration: none;
   color: var(--color-text-primary);
   font-weight: bold;
