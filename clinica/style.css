@@ -1,0 +1,61 @@
+body {
+  background-color: var(--color-secondary);
+}
+
+header {
+  background-color: var(--color-primary);
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 32px;
+  filter: invert(91%) sepia(25%) saturate(857%) hue-rotate(343deg)
+    brightness(107%) contrast(101%);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+nav > .logo-title {
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin: 0;
+  margin-left: 12px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.clin-navlogin {
+  display: flex;
+  align-items: center;
+}
+
+.clin-navlogin a {
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+.clin-navbar {
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
