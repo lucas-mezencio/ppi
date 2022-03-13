@@ -38,7 +38,7 @@ nav > .logo-title {
   align-items: center;
 }
 
-header h1 {
+.logo-title h1 {
   font-size: 28px;
   font-weight: bold;
   color: var(--color-text-secondary);
@@ -46,12 +46,21 @@ header h1 {
   margin-left: 12px;
 }
 
-.nav-link,
+nav button,
 .clin-navlogin {
   text-decoration: none;
   color: var(--color-text-secondary);
   font-weight: bold;
   font-size: 20px;
+  background-color: inherit;
+  border: none;
+  padding-right: 4px;
+}
+
+nav button:hover {
+  color: var(--color-primary);
+  border-bottom: solid 2px var(--color-text-terciary);
+  text-decoration: none;
 }
 
 .clin-navlogin {
@@ -64,13 +73,6 @@ header h1 {
   font-size: 20px;
 }
 
-.clin-navbar {
-  width: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 main .container {
   background-color: var(--color-secondary-transparent);
 
@@ -80,11 +82,20 @@ main .container {
   transform: translate(-50%, 0);
 }
 
-.clin-home {
+main section {
   color: var(--color-text-primary);
+  display: none;
 }
 
-.clin-home article {
+.tab-active {
+  display: block;
+}
+
+.clin-btn-active {
+  border-bottom: solid 4px var(--color-text-terciary);
+}
+
+#home article {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,12 +103,12 @@ main .container {
   margin: 128px 0 0 32px;
 }
 
-.clin-home h2 {
+#home h2 {
   font-size: 48px;
   font-weight: bold;
 }
 
-.clin-home p {
+#home p {
   font-size: 28px;
 }
 
@@ -113,8 +124,4 @@ main .container {
   width: 320px;
   border: solid 2px var(--color-primary);
   border-radius: 4px;
-}
-
-.clin-hide {
-  display: none;
 }
