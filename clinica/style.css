@@ -132,3 +132,11 @@ button.btn-active {
   border: solid 2px var(--color-primary);
   border-radius: 8px;
 }
+
+#galeria {
+  padding-top: 72px;
+}
+
+#galeria article {
+  margin-top: 56px;
+}
