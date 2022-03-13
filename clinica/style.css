@@ -13,14 +13,14 @@ body {
 }
 
 header {
-  background-color: var(--color-primary);
+  background-color: #11cccc;
   height: 60px;
   width: 100vw;
   display: flex;
   align-items: center;
 }
 
-header img {
+nav img {
   width: 32px;
   filter: invert(91%) sepia(25%) saturate(857%) hue-rotate(343deg)
     brightness(107%) contrast(101%);
@@ -33,12 +33,12 @@ nav {
   height: 100%;
 }
 
-nav > .logo-title {
+nav .clinica-logo {
   display: flex;
   align-items: center;
 }
 
-.logo-title h1 {
+.clinica-logo h1 {
   font-size: 28px;
   font-weight: bold;
   color: var(--color-text-secondary);
@@ -46,8 +46,8 @@ nav > .logo-title {
   margin-left: 12px;
 }
 
-nav button,
-.clin-navlogin {
+.clinica-navitem,
+.clinica-login a {
   text-decoration: none;
   color: var(--color-text-secondary);
   font-weight: bold;
@@ -57,20 +57,10 @@ nav button,
   padding-right: 4px;
 }
 
-nav button:hover {
-  color: var(--color-primary);
+.clinica-navitem:hover {
+  color: var(--color-text-secondary);
   border-bottom: solid 2px var(--color-text-terciary);
   text-decoration: none;
-}
-
-.clin-navlogin {
-  display: flex;
-  align-items: center;
-}
-
-.clin-navlogin a {
-  margin-left: 8px;
-  font-size: 20px;
 }
 
 main .container {
@@ -91,16 +81,16 @@ main section {
   display: block;
 }
 
-.clin-btn-active {
+.clinica-btn-ativo {
   border-bottom: solid 4px var(--color-text-terciary);
 }
 
 #home article {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   width: 70%;
-  margin: 128px 0 0 32px;
+  margin: 256px 0 0 32px;
 }
 
 #home h2 {
@@ -111,8 +101,11 @@ main section {
 #home p {
   font-size: 28px;
 }
+#home .clinica-preco {
+  font-size: 16px;
+}
 
-.clin-agendar > button {
+#home .clinica-agendar > button {
   background-color: var(--color-text-terciary);
   color: var(--color-primary);
   text-decoration: none;
@@ -123,5 +116,19 @@ main section {
   height: 72px;
   width: 320px;
   border: solid 2px var(--color-primary);
-  border-radius: 4px;
+  border-radius: 8px;
+}
+
+#home .clinica-agendar > button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+
+  height: 72px;
+  width: 320px;
+  border: solid 2px var(--color-primary);
+  border-radius: 8px;
 }

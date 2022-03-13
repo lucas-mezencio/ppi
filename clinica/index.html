@@ -21,47 +21,22 @@
   <body>
     <header>
       <div class="container">
-        <nav class="navbar navbar-expand-sm">
-          <div class="logo-title navbar-brand">
+        <nav>
+          <div class="clinica-logo">
             <img src="assets/icons/hospital.svg" alt="Logo da clinica" />
             <h1>Clínica</h1>
           </div>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav">
-              <div class="nav-item">
-                <button data-tabname="cont-home" class="nav-link clin-btn">
-                  Home
-                </button>
-              </div>
-              <div class="nav-item">
-                <button data-tabname="cont-gallery" class="nav-link clin-btn">
-                  Galeria
-                </button>
-              </div>
-              <div class="nav-item">
-                <button data-tabname="cont-address" class="nav-link clin-btn">
-                  Endereço
-                </button>
-              </div>
-
-              <a class="navbar-text clin-navlogin" href="">
-                <img src="assets/icons/login.svg" alt="Entrar" />
-                Entrar
-              </a>
-            </div>
+          <div class="clinica-nav">
+            <a data-tabname="cont-home" class="clinica-navitem">Home</a>
+            <a data-tabname="cont-gallery" class="clinica-navitem">Galeria</a>
+            <a data-tabname="cont-address" class="clinica-navitem">Endereços</a>
+          </div>
+          <div class="clinica-login">
+            <a href="#">
+              <img src="assets/icons/login.svg" alt="Entrar" />
+              Entrar
+            </a>
           </div>
         </nav>
       </div>
@@ -76,14 +51,17 @@
               Levamos a sério o bem estar dos nossos pacientes, <br />
               dentro e fora da clinica
             </p>
-            <a class="clin-agendar" href="">
+            <p class="clinica-preco">Sua consulta a partir de R$250,00</p>
+            <a class="clinica-agendar" href="#">
               <button>Agende conosco!</button>
             </a>
           </article>
         </section>
+
         <section data-tabname="cont-gallery">
           <h2>galeria</h2>
         </section>
+
         <section data-tabname="cont-address">
           <h2>endreços</h2>
         </section>
