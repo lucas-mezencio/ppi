@@ -54,7 +54,7 @@ nav .clinica-logo {
   font-size: 20px;
   background-color: inherit;
   border: none;
-  padding-right: 4px;
+  margin-right: 4px;
 }
 
 .clinica-navitem:hover {
@@ -72,16 +72,16 @@ main .container {
   transform: translate(-50%, 0);
 }
 
-main section {
+.tabs section {
   color: var(--color-text-primary);
   display: none;
 }
 
 .tab-active {
-  display: block;
+  display: block !important;
 }
 
-.clinica-btn-ativo {
+button.btn-active {
   border-bottom: solid 4px var(--color-text-terciary);
 }
 
