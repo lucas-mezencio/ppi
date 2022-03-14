@@ -63,6 +63,10 @@ nav .clinica-logo {
   text-decoration: none;
 }
 
+.clinica-login:hover {
+  cursor: pointer;
+}
+
 main .container {
   background-color: var(--color-secondary-transparent);
 
