@@ -4,5 +4,26 @@ header img {
 }
 
 main {
-  height: 92vh;
+  padding-bottom: 10%;
+}
+
+#sessao-medico {
+  display: none;
+}
+
+.navbar-text {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-text img {
+  padding-right: 4px;
+}
+
+main > h1 {
+  color: white;
+  font-size: 32px;
 }
