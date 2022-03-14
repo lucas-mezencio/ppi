@@ -106,7 +106,8 @@ button.btn-active {
 }
 
 #home .clinica-agendar > button,
-#endereco button {
+#endereco button,
+#modal-login form button {
   background-color: var(--color-text-terciary);
   color: var(--color-primary);
   text-decoration: none;
@@ -121,7 +122,8 @@ button.btn-active {
 }
 
 #home .clinica-agendar > button:hover,
-#endereco button:hover {
+#endereco button:hover,
+#modal-login form button:hover {
   background-color: var(--color-primary);
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -150,4 +152,53 @@ button.btn-active {
 
 #endereco form {
   margin-top: 32px;
+}
+
+#modal-login {
+  background-color: #00000060;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#modal-login .modal-content {
+  width: 40vw;
+  height: 40vh;
+}
+
+.modal-content {
+  background-color: rgba(160, 255, 234, 0.9);
+  padding: 24px 32px;
+  color: var(--color-text-primary);
+  border-radius: 16px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 24px;
+  margin-bottom: 16px;
+}
+
+.modal-menu h5 {
+  margin: 0;
+}
+
+.exit-modal-button {
+  background-color: transparent;
+  border: none;
+  font-weight: bolder;
+  width: 32px;
+  height: 32px;
+  color: red;
 }
