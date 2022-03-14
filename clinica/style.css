@@ -105,7 +105,13 @@ button.btn-active {
   font-size: 16px;
 }
 
-#home .clinica-agendar > button,
+#home .clinica-agendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .clinica-agendar,
 #endereco button,
 #modal-login form button {
   background-color: var(--color-text-terciary);
@@ -121,7 +127,7 @@ button.btn-active {
   border-radius: 8px;
 }
 
-#home .clinica-agendar > button:hover,
+#home .clinica-agendar:hover,
 #endereco button:hover,
 #modal-login form button:hover {
   background-color: var(--color-primary);
