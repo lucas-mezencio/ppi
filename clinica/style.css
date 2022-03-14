@@ -47,7 +47,7 @@ nav .clinica-logo {
 }
 
 .clinica-navitem,
-.clinica-login a {
+#btn-login {
   text-decoration: none;
   color: var(--color-text-secondary);
   font-weight: bold;

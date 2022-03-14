@@ -37,7 +37,7 @@
             </button>
           </div>
           <div class="clinica-login">
-            <a href="#">
+            <a id="btn-login">
               <img src="assets/icons/login.svg" alt="Entrar" />
               Entrar
             </a>
@@ -176,7 +176,9 @@
       <div class="modal-content">
         <div class="modal-menu">
           <h5>Entrar como funcionário</h5>
-          <button type="button" class="exit-modal-button">X</button>
+          <button type="button" class="exit-modal-button" id="modal-close">
+            X
+          </button>
         </div>
         <form action="" method="post">
           <div class="form-floating mb-3">
@@ -214,8 +216,14 @@
             openTab(button.dataset.tabname);
           };
         }
-
         openTab("cont-a");
+
+        const modal = document.getElementById("modal-login");
+        const btnOpen = document.getElementById("btn-login");
+        const btnClose = document.getElementById("modal-close");
+
+        btnOpen.onclick = () => (modal.style.display = "block");
+        btnClose.onclick = () => (modal.style.display = "none");
 
         function openTab(tab) {
           const lastTab = document.querySelector(".tab-active");
