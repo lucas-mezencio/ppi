@@ -105,7 +105,8 @@ button.btn-active {
   font-size: 16px;
 }
 
-#home .clinica-agendar > button {
+#home .clinica-agendar > button,
+#endereco button {
   background-color: var(--color-text-terciary);
   color: var(--color-primary);
   text-decoration: none;
@@ -119,7 +120,8 @@ button.btn-active {
   border-radius: 8px;
 }
 
-#home .clinica-agendar > button:hover {
+#home .clinica-agendar > button:hover,
+#endereco button:hover {
   background-color: var(--color-primary);
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -139,4 +141,13 @@ button.btn-active {
 
 #galeria article {
   margin-top: 56px;
+}
+
+#endereco h2 {
+  margin-top: 56px;
+  margin-left: 48px;
+}
+
+#endereco form {
+  margin-top: 32px;
 }
