@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Questao 3</title>
+  </head>
+  <body>
+    <form action="questao3.php" method="get">
+      <label for="carId">Id</label>
+      <input type="text" name="carId" id="carId" />
+      <button id="btnSend">Pesquisar</button>
+    </form>
+    <div>
+      <p id="marca"></p>
+      <p id="modelo"></p>
+      <p id="cor"></p>
+    </div>
+
+    <script>
+      window.onload = () => {
+        const bntSend = document.getElementById("btnSend");
+        bntSend.onclick = async () => {
+          event.preventDefault();
+          const carId = document.getElementById("carId");
+          try {
+            const response = await fetch(`questao3.php?id=${carId.value}`);
+            if (!response.ok) {
+              throw new Error("Error" + response.status);
+            }
+            const car = await response.json();
+            console.log(car);
+
+            const marca = getElementById("marca");
+            const modelo = getElementById("modelo");
+            const cor = getElementById("cor");
+
+            marca.text = car.marca;
+            modelo.text = car.modelo;
+            cor.text = car.cor;
+          } catch (err) {
+            console.log(err);
+          }
+        };
+      };
+    </script>
+  </body>
+</html>
