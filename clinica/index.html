@@ -178,7 +178,15 @@
             X
           </button>
         </div>
-        <form action="" method="post">
+        <div
+          id="login-fail"
+          style="display: none"
+          class="alert alert-danger"
+          role="alert"
+        >
+          Não foi possível fazer login, tente novamente.
+        </div>
+        <form id="form-login" method="post">
           <div class="form-floating mb-3">
             <input
               type="email"
@@ -198,7 +206,7 @@
               placeholder="Senha"
             />
             <label for="password" class="form-label px-4">Senha</label>
-            <button class="mt-3">Entrar</button>
+            <button class="mt-3" id="button-login">Entrar</button>
           </div>
         </form>
       </div>

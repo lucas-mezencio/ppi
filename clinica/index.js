@@ -1,5 +1,8 @@
 window.onload = () => {
   openModal();
+
+  const btnLogin = document.getElementById("button-login");
+  btnLogin.onclick = sendLoginForm;
 };
 
 function openModal() {
@@ -34,5 +37,30 @@ function openModal() {
 
     document.querySelector(`nav button[data-tabname="${tab}"]`).className =
       "clinica-navitem btn-active";
+  }
+}
+
+async function sendLoginForm() {
+  try {
+    const loginFormData = new FormData(document.getElementById("form-login"));
+
+    const response = await fetch("login.php", {
+      method: "POST",
+      body: loginFormData,
+    });
+
+    if (!response.ok) {
+      throw new Error("Erro: ", response.status);
+    }
+
+    const login = await response.json();
+    if (login.success) {
+      window.location = response.detail;
+    } else {
+      document.getElementById("login-fail").style.display = "block";
+      form.password.value = "";
+    }
+  } catch (err) {
+    console.log(err);
   }
 }

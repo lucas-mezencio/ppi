@@ -177,7 +177,7 @@ button.btn-active {
 
 #modal-login .modal-content {
   width: 40vw;
-  height: 40vh;
+  height: fit-content;
 }
 
 .modal-content {
