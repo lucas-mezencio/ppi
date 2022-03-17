@@ -47,7 +47,7 @@ redirectIfNotLogin($pdo, "../");
 
     <main class="container bg-dark">
       <h1 class="pt-4 ml-5">
-        <?php echo "Olá, " . $_SESSION['name']; ?>
+        <?php echo "Olá, " . htmlspecialchars($_SESSION['name']); ?>
       </h1>
       <div class="row p-5">
         <div class="col-md-4 g-4">
