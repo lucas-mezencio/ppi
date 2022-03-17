@@ -4,6 +4,15 @@ require "../../authentication.php";
 session_start();
 $pdo = mysqlConnect();
 redirectIfNotLogin($pdo, "../../");
+
+try {
+  $sql = <<<SQL
+    select distinct especialidade from tb_medico
+SQL;
+  $stmt = $pdo->query($sql);
+} catch (Exception $e) {
+  exit ('Erro: ' . $e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -202,7 +211,16 @@ redirectIfNotLogin($pdo, "../../");
               id="especialidade"
               class="form-control"
               placeholder="Especialidade"
+              list="especialidades"
             />
+            <datalist id="especialidades">
+              <?php
+                while($row = $stmt -> fetch()) {
+                  $value = htmlspecialchars($row['especialidade']);
+                  echo "<option value='$value'>";
+                }
+              ?>
+            </datalist>
             <label for="especialidade" class="form-label px-4">
               Especialidade
             </label>
