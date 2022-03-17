@@ -43,7 +43,8 @@ function openModal() {
 async function sendLoginForm() {
   event.preventDefault();
   try {
-    const loginFormData = new FormData(document.getElementById("form-login"));
+    const loginForm = document.getElementById("form-login");
+    const loginFormData = new FormData(loginForm);
 
     const response = await fetch("login.php", {
       method: "POST",
@@ -55,11 +56,12 @@ async function sendLoginForm() {
     }
 
     const login = await response.json();
+    console.log(login);
     if (login.success) {
-      window.location = response.detail;
+      window.location = login.detail;
     } else {
       document.getElementById("login-fail").style.display = "block";
-      form.password.value = "";
+      loginForm.password.value = "";
     }
   } catch (err) {
     console.log(err);
