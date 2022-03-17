@@ -15,29 +15,21 @@ $logradouro = $_POST["logradouro"] ?? "";
 $cidade = $_POST["cidade"] ?? "";
 $estado = $_POST["estado"] ?? "";
 
-$senha = $_POST["senha"] ?? "";
-$senha = password_hash($senha, PASSWORD_DEFAULT);
-$dataContrato =  date("Y-m-d", strtotime($_POST["data-contrato"]) ?? "");
-$salario = $_POST["salario"] ?? "";
+$peso = $_POST["peso"] ?? "";
+$altura = $_POST["altura"] ?? "";
+$tipoSang = $_POST["tipoSang"] ?? "";
 
-$isMedico = $_POST["isMedico"] ?? "";
-$crm = $_POST["crm"] ?? "";
-$especialidade = $_POST["especialidade"] ?? "";
 
 $sqlPerson = <<<SQL
   insert into tb_pessoa 
     (nome, sexo, email, telefone, cep, logradouro, cidade, estado)
     values (?, ?, ?, ?, ?, ?, ?, ?)
 SQL;
-$sqlEmp = <<<SQL
-  insert into tb_funcionario 
+$sqlPat = <<<SQL
+  insert into tb_paciente 
     values (?, ?, ?, ?)
 SQL;
 
-$sqlMed = <<<SQL
-  insert into tb_medico
-    values (?, ?, ?);
-SQL;
 
 
 try {
@@ -51,16 +43,9 @@ try {
     throw new Exception("Falha no registro de pessoa.");
   }
   $personId = $pdo->lastInsertId();
-  $stmt = $pdo->prepare($sqlEmp);
-  if (!$stmt->execute([$personId, $dataContrato, $salario, $senha])) {
-    throw new Exception("Falha no registro de funcionário");
-  }
-
-  if ($isMedico) {
-    $stmt = $pdo->prepare($sqlMed);
-    if (!$stmt->execute([$personId, $especialidade, $crm])) {
-      throw new Exception("Falha no registro de medico");
-    }
+  $stmt = $pdo->prepare($sqlPat);
+  if (!$stmt->execute([$personId, $peso, $altura, $tipoSang])) {
+    throw new Exception("Falha no registro de paciente.");
   }
 
   $pdo->commit();
