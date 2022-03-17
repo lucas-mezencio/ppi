@@ -32,7 +32,7 @@ redirectIfNotLogin($pdo, "../");
             Clínica
           </a>
 
-          <a href="#" class="navbar-text">
+          <a href="logout.php" class="navbar-text">
             <img
               src="../assets/icons/logout.svg"
               alt="logout"
@@ -47,13 +47,7 @@ redirectIfNotLogin($pdo, "../");
 
     <main class="container bg-dark">
       <h1 class="pt-4 ml-5">
-        <?php
-        echo $_SESSION['name'];
-        if ($_SESSION['isMedic']) {
-          echo "é medico";
-        }
-        else echo "não é medico";
-        ?>
+        <?php echo "Olá, " . $_SESSION['name']; ?>
       </h1>
       <div class="row p-5">
         <div class="col-md-4 g-4">
