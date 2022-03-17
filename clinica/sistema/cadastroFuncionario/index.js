@@ -1,17 +1,17 @@
 window.onload = () => {
-  const salaryInput = document.getElementById("salario");
-  salaryInput.onchange = (e) => {
-    const formatter = new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    });
-
-    if (isNaN(e.target.value)) {
-      e.target.value = "";
-    } else {
-      e.target.value = formatter.format(e.target.value);
-    }
-  };
+  // const salaryInput = document.getElementById("salario");
+  // salaryInput.onchange = (e) => {
+  //   const formatter = new Intl.NumberFormat("pt-BR", {
+  //     style: "currency",
+  //     currency: "BRL",
+  //   });
+  //
+  //   if (isNaN(e.target.value)) {
+  //     e.target.value = "";
+  //   } else {
+  //     e.target.value = formatter.format(e.target.value);
+  //   }
+  // };
 
   const medicCheckbox = document.getElementById("isMedico");
   medicCheckbox.onchange = () => {

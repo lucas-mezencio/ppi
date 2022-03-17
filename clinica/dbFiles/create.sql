@@ -13,7 +13,7 @@ create table tb_pessoa
   id int PRIMARY KEY auto_increment,
   nome varchar(60),
   sexo varchar(2),
-  email varchar(45),
+  email varchar(45) unique ,
   telefone varchar(16),
   cep varchar(10),
   logradouro varchar(128),
