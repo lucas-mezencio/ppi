@@ -17,7 +17,7 @@ $estado = $_POST["estado"] ?? "";
 
 $senha = $_POST["senha"] ?? "";
 $senha = password_hash($senha, PASSWORD_DEFAULT);
-$dataContrato = $_POST["data-contrato"] ?? "";
+$dataContrato =  date("Y-m-d", strtotime($_POST["data-contrato"]) ?? "");
 $salario = $_POST["salario"] ?? "";
 
 $isMedico = $_POST["isMedico"] ?? "";
@@ -68,6 +68,9 @@ try {
   }
 
   $pdo->commit();
+
+  header("Location: index.php");
+  exit();
 } catch (Exception $e) {
   $pdo->rollBack();
   exit("Erro: " . $e->getMessage());
