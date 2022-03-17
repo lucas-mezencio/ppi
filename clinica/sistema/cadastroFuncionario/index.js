@@ -31,10 +31,10 @@ window.onload = () => {
   };
 
   const inputCep = document.getElementById("cep");
-  inputCep.onkeyup = () => loadAdress(inputCep.value);
+  inputCep.onkeyup = () => loadAddress(inputCep.value);
 };
 
-async function loadAdress(cep) {
+async function loadAddress(cep) {
   if (cep.length != 9) {
     return;
   }

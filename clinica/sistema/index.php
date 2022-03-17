@@ -51,7 +51,9 @@ redirectIfNotLogin($pdo, "../");
       </h1>
       <div class="row p-5">
         <div class="col-md-4 g-4">
-          <a class="col-12 btn btn-primary mb-4">Cadastar Paciente</a>
+          <a href="cadastroPaciente" class="col-12 btn btn-primary mb-4">
+            Cadastar Paciente
+          </a>
           <a href="cadastroFuncionario" class="col-12 btn btn-primary mb-4" >
             Cadastar Funcionário
           </a>
