@@ -46,7 +46,15 @@ redirectIfNotLogin($pdo, "../");
     </header>
 
     <main class="container bg-dark">
-      <h1 class="pt-4 ml-5">Olá fulano</h1>
+      <h1 class="pt-4 ml-5">
+        <?php
+        echo $_SESSION['name'];
+        if ($_SESSION['isMedic']) {
+          echo "é medico";
+        }
+        else echo "não é medico";
+        ?>
+      </h1>
       <div class="row p-5">
         <div class="col-md-4 g-4">
           <a class="col-12 btn btn-primary mb-4">Cadastar Paciente</a>
