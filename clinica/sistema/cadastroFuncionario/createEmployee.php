@@ -59,7 +59,7 @@ try {
   if ($isMedico) {
     $stmt = $pdo->prepare($sqlMed);
     if (!$stmt->execute([$personId, $especialidade, $crm])) {
-      throw new Exception("Falha no registro de funcionário");
+      throw new Exception("Falha no registro de medico");
     }
   }
 

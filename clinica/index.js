@@ -56,7 +56,6 @@ async function sendLoginForm() {
     }
 
     const login = await response.json();
-    console.log(login);
     if (login.success) {
       window.location = login.detail;
     } else {

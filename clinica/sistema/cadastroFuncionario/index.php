@@ -37,7 +37,7 @@ redirectIfNotLogin($pdo, "../../");
     <main class="container bg-dark">
       <h1 class="pt-5 pb-4 ps-3">Cadastar funcionário</h1>
       <div><p>usuário cadastrado com sucesso!</p></div>
-      <form action="createEmployee.php" method="post" class="px-3">
+      <form action="createEmployee.php" method="post" class="px-3" id="emp-form">
         <div class="row g-3">
           <div class="col-sm-7 col-lg-10 form-floating">
             <input
