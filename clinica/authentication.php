@@ -59,10 +59,41 @@ SQL;
   }
 }
 
+function getEmployeeName($pdo) {
+  try {
+    $sql = <<<SQL
+    select nome from tb_pessoa where email = ?
+SQL;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$_SESSION['email']]);
+    $name = $stmt->fetchColumn();
+    return $name;
+  } catch (Exception $e) {
+    exit('Erro: ' . $e->getMessage());
+  }
+}
 
-function redirectIfNotLogin($pdo) {
+function getIsMedic($pdo) {
+  try {
+    $sql = <<<SQL
+    select tb_pessoa.id
+    from tb_pessoa, tb_medico  
+    where tb_pessoa.id = tb_medico.id
+SQL;
+    $stmt = $pdo->query($sql);
+    $name = $stmt->fetchColumn();
+    if ($name) {
+      return true;
+    }
+    return false;
+  } catch (Exception $e) {
+    exit('Erro: ' . $e->getMessage());
+  }
+}
+
+function redirectIfNotLogin($pdo, $location) {
   if (!checkLogin($pdo)) {
-    header("Location: ../index.html");
+    header("Location: " . $location);
     exit();
   }
 }

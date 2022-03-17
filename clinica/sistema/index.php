@@ -4,7 +4,7 @@ require "../db-connection.php";
 require "../authentication.php";
 session_start();
 $pdo = mysqlConnect();
-redirectIfNotLogin($pdo);
+redirectIfNotLogin($pdo, "../");
 ?>
 
 <!DOCTYPE html>

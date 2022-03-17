@@ -22,6 +22,8 @@ if ($hashPassword = getPasswordIfLogin($pdo, $email, $password)) {
   $_SESSION['email'] = $email;
   $_SESSION['loginString'] = hash('sha512', $hashPassword . $_SERVER['HTTP_USER_AGENT']);
   $response = new RequestResponse(true, 'sistema/index.php');
+  $_SESSION['name'] = getEmployeeName($pdo);
+  $_SESSION['isMedic'] = getIsMedic($pdo);
 } else {
   $response = new RequestResponse(false, '');
 }
