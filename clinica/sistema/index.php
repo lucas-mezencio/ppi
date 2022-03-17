@@ -1,3 +1,12 @@
+<?php
+
+require "../db-connection.php";
+require "../authentication.php";
+session_start();
+$pdo = mysqlConnect();
+redirectIfNotLogin($pdo);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
