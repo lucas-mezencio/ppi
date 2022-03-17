@@ -41,6 +41,7 @@ function openModal() {
 }
 
 async function sendLoginForm() {
+  event.preventDefault();
   try {
     const loginFormData = new FormData(document.getElementById("form-login"));
 
