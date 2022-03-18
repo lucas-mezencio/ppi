@@ -63,6 +63,7 @@ SQL;
                 class="form-select"
                 required
               >
+                <option value="" selected>Selecione</option>
                 <?php
                     while($row = $stmt->fetch()) {
                       $value = htmlspecialchars($row['especialidade']);
@@ -76,7 +77,6 @@ SQL;
             </div>
             <div class="col-sm-6 form-floating mb-3">
               <select name="medico" id="medico" class="form-select">
-                <option value="">nome medico</option>
               </select>
               <label for="medico" class="form-label px-4">Médico</label>
             </div>
