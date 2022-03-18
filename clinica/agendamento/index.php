@@ -53,7 +53,7 @@ SQL;
 
     <main>
       <div class="container">
-        <form action="" method="post" class="m-5">
+        <form action="createSchedule.php" method="post" class="m-5">
           <div class="row">
             <div class="col-sm-6 form-floating mb-3">
               <select
