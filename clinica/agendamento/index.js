@@ -5,16 +5,19 @@ window.onload = () => {
   const selDate = document.getElementById("date");
   requestSchedule(selDate).then(() => console.log());
   selDate.onchange = () =>
-      // console.log(selDate.value)
-      requestSchedule(selDate);
+    // console.log(selDate.value)
+    requestSchedule(selDate, selEspecialidade);
 };
 
-async function requestSchedule(select) {
+async function requestSchedule(select, specialty) {
   if (select.value === "" || select.value == null) {
     return;
   }
   try {
-    const response = await fetch(`schedule.php?date=${select.value}`);
+    const selMedico = document.getElementById("medico");
+    const response = await fetch(
+      `schedule.php?date=${select.value}&medicId=${selMedico.value}`
+    );
     if (!response.ok) {
       throw new Error("Erro: ", response.status);
     }
@@ -47,10 +50,10 @@ function showNames(data) {
   const selNomes = document.getElementById("medico");
   clearSelect(selNomes);
   if (data.success) {
-    for (let nome of data.nomes) {
+    for (let medic of data.medics) {
       let option = document.createElement("option");
-      option.value = nome;
-      option.text = nome;
+      option.value = medic.id;
+      option.text = medic.name;
       selNomes.add(option);
     }
   }

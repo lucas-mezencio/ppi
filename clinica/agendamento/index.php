@@ -95,7 +95,7 @@ SQL;
             </div>
             <div class="col-sm-6 form-floating mb-5">
               <select name="hour" id="hour" class="form-select" required>
-                <option value="">12hrs</option>
+
               </select>
               <label for="hour" class="form-label px-4">Horário</label>
             </div>

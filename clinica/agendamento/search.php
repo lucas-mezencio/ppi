@@ -2,13 +2,25 @@
 
 class RequestResponse {
   public $success;
-  public $nomes;
+  public $medics;
 
-  public function __construct($success, $nomes)
+  public function __construct($success, $medics)
   {
     $this->success = $success;
-    $this->nomes = $nomes;
+    $this->medics = $medics;
   }
+}
+
+class Medic {
+  public $name;
+  public $id;
+
+  public function __construct($name, $id)
+  {
+    $this->name = $name;
+    $this->id = $id;
+  }
+
 }
 
 require "../db-connection.php";
@@ -18,7 +30,7 @@ $especialidade = $_GET['especialidade'] ?? '';
 
 try {
   $sql = <<<SQL
-    select nome from tb_pessoa tp 
+    select nome, id from tb_pessoa tp 
     where id in (select id 
             from tb_medico tm 
             where especialidade = ?
@@ -30,13 +42,16 @@ SQL;
   exit('Erro: ' . $e->getMessage());
 }
 
-$namesArr = array();
+$medicsArr = array();
 while ($name = $stmt->fetch()) {
-  $namesArr[] = htmlspecialchars($name['nome']);
+  $medicsArr[] = new Medic(
+    htmlspecialchars($name['nome']),
+    htmlspecialchars($name['id'])
+  );
 }
 
-if (count($namesArr) != 0) {
-  $response = new RequestResponse(true, $namesArr);
+if (count($medicsArr) != 0) {
+  $response = new RequestResponse(true, $medicsArr);
 } else {
   $response = new RequestResponse(false, null);
 }

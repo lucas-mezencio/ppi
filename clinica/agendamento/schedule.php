@@ -13,6 +13,7 @@ class RequestResponse {
 require "../db-connection.php";
 $pdo = mysqlConnect();
 
+$id= $_GET["medicId"] ?? "";
 $date = date(
   "Y-m-d",
   strtotime($_GET["date"]) ?? ""
@@ -21,10 +22,13 @@ $date = date(
 try {
   $sql = <<<SQL
     select horario from tb_agenda
-    where data_ = ?
+    where data_ = ? and medico_id in ( 
+    	select id from tb_medico
+      where id = ?
+    );
 SQL;
   $stmt = $pdo->prepare($sql);
-  $stmt->execute([$date]);
+  $stmt->execute([$date, $id]);
 } catch (Exception $e) {
   exit('Erro: ' . $e->getMessage());
 }
