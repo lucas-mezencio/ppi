@@ -25,7 +25,6 @@ SQL;
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../main.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Agendamento</title>
   </head>
@@ -76,7 +75,7 @@ SQL;
               </label>
             </div>
             <div class="col-sm-6 form-floating mb-3">
-              <select name="medico" id="medico" class="form-select">
+              <select name="medico" id="medico" class="form-select" required>
               </select>
               <label for="medico" class="form-label px-4">Médico</label>
             </div>
@@ -90,11 +89,12 @@ SQL;
                 name="date"
                 id="date"
                 placeholder="Data"
+                required
               />
               <label for="date" class="form-label px-4">Data</label>
             </div>
             <div class="col-sm-6 form-floating mb-5">
-              <select name="hour" id="hour" class="form-select">
+              <select name="hour" id="hour" class="form-select" required>
                 <option value="">12hrs</option>
               </select>
               <label for="hour" class="form-label px-4">Horário</label>
@@ -109,6 +109,7 @@ SQL;
                 id="name"
                 class="form-control"
                 placeholder="Nome completo"
+                required
               />
               <label for="name" class="form-label px-4">Nome completo</label>
             </div>
@@ -122,11 +123,12 @@ SQL;
                 id="email"
                 class="form-control"
                 placeholder="Email"
+                required
               />
               <label for="email" class="form-label px-4">Email</label>
             </div>
             <div class="col-sm-4 form-floating mb-5">
-              <select name="sexo" id="sexo" class="form-select">
+              <select name="sexo" id="sexo" class="form-select" required>
                 <option selected>Sel. o sexo</option>
                 <option value="f">Feminino</option>
                 <option value="m">Masculino</option>
