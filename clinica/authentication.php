@@ -74,18 +74,34 @@ SQL;
 }
 
 function getIsMedic($pdo) {
+  $id = getUserId($pdo);
   try {
     $sql = <<<SQL
-    select tb_pessoa.id
-    from tb_pessoa, tb_medico  
-    where tb_pessoa.id = tb_medico.id
+      select tm.id 
+	      from tb_medico tm 
+	      where tm.id = ?;
 SQL;
-    $stmt = $pdo->query($sql);
-    $name = $stmt->fetchColumn();
-    if ($name) {
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$id]);
+    if ($stmt->fetchColumn()) {
       return true;
     }
     return false;
+  } catch (Exception $e) {
+    exit('Erro: ' . $e->getMessage());
+  }
+}
+
+function getUserId($pdo) {
+  try {
+    $sql = <<<SQL
+      select id from tb_pessoa where email = ?
+SQL;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$_SESSION['email']]);
+    $id = $stmt->fetchColumn();
+    echo ($id);
+    return $id;
   } catch (Exception $e) {
     exit('Erro: ' . $e->getMessage());
   }
