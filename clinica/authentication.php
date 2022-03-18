@@ -99,9 +99,7 @@ function getUserId($pdo) {
 SQL;
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$_SESSION['email']]);
-    $id = $stmt->fetchColumn();
-    echo ($id);
-    return $id;
+    return $stmt->fetchColumn();
   } catch (Exception $e) {
     exit('Erro: ' . $e->getMessage());
   }

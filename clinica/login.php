@@ -21,11 +21,12 @@ if ($hashPassword = getPasswordIfLogin($pdo, $email, $password)) {
   session_start();
   $_SESSION['email'] = $email;
   $_SESSION['loginString'] = hash('sha512', $hashPassword . $_SERVER['HTTP_USER_AGENT']);
-  $response = new RequestResponse(true, 'sistema/index.php');
   $_SESSION['name'] = getEmployeeName($pdo);
   $_SESSION['isMedic'] = getIsMedic($pdo);
+  $response = new RequestResponse(true, 'sistema/index.php');
 } else {
   $response = new RequestResponse(false, '');
 }
 
+header('Content-type: application/json');
 echo json_encode($response);

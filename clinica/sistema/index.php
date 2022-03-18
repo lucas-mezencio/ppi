@@ -62,7 +62,7 @@ redirectIfNotLogin($pdo, "../");
           <a href="listarPacientes" class="col-12 btn btn-primary mb-4">Listar Pacientes</a>
           <a href="listarFuncionarios" class="col-12 btn btn-primary mb-4">Listar Funcionários</a>
         </div>
-        <div class="col-md-4 g-4 mt-0">
+        <div class="col-md-4 g-4">
           <?php
             if (getIsMedic($pdo)) {
               echo <<<HTML
