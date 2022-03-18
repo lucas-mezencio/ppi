@@ -215,7 +215,7 @@ SQL;
             />
             <datalist id="especialidades">
               <?php
-                while($row = $stmt -> fetch()) {
+                while($row = $stmt->fetch()) {
                   $value = htmlspecialchars($row['especialidade']);
                   echo "<option value='$value'>";
                 }

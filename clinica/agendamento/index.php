@@ -1,3 +1,17 @@
+<?php
+require "../db-connection.php";
+$pdo = mysqlConnect();
+
+try {
+  $sql = <<<SQL
+    select distinct especialidade from tb_medico
+SQL;
+  $stmt = $pdo->query($sql);
+} catch (Exception $e) {
+  exit ('Erro: ' . $e->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -47,8 +61,14 @@
                 name="especialidade"
                 id="especialidade"
                 class="form-select"
+                required
               >
-                <option value="">teste</option>
+                <?php
+                    while($row = $stmt->fetch()) {
+                      $value = htmlspecialchars($row['especialidade']);
+                      echo "<option value='$value'>$value</option>";
+                    }
+                ?>
               </select>
               <label for="especialidade" class="form-label px-4">
                 Especialidade
@@ -111,7 +131,7 @@
                 <option value="f">Feminino</option>
                 <option value="m">Masculino</option>
               </select>
-              <label for="" class="form-label px-4">Sexo</label>
+              <label for="sexo" class="form-label px-4">Sexo</label>
             </div>
           </div>
           <div class="row">

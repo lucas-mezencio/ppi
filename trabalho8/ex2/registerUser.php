@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$email, $password]);
 
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
   } catch (Exception $e) {
     if ($e->errorInfo[1] === 1062) {

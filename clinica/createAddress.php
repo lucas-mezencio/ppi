@@ -16,7 +16,7 @@ SQL;
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$cep, $address, $city, $uf,]);
 
-  header("location: index.html");
+  header("location: index.php");
   exit();
 } catch (Exception $e) {
   exit("Falha ao cadastrar: " . $e->getMessage());
