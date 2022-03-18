@@ -66,7 +66,7 @@ redirectIfNotLogin($pdo, "../");
           <a id="sessao-medico" class="col-12 btn btn-primary mb-4">
             Meus agendamentos
           </a>
-          <a class="col-12 btn btn-primary mb-4">Todos os agendamentos </a>
+          <a href="listarAgendamentos" class="col-12 btn btn-primary mb-4">Todos os agendamentos </a>
           <a href="listarEnderecos" class="col-12 btn btn-primary mb-4">Listar endereços</a>
         </div>
       </div>
