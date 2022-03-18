@@ -8,8 +8,8 @@ redirectIfNotLogin($pdo, "../../");
 
 try {
   $sql = <<<SQL
-    select * from tb_paciente tp 
-    inner join tb_pessoa on tp.id = tb_pessoa.id
+    select cep, logradouro, cidade, estado 
+    from tb_endereco
 SQL;
   $stmt = $pdo->query($sql);
 } catch (Exception $e) {
@@ -30,7 +30,7 @@ SQL;
   />
   <link rel="stylesheet" href="../main.css" />
   <link rel="stylesheet" href="style.css" />
-  <title>Lista de Pacientes</title>
+  <title>Lista de Endereços</title>
 </head>
 <body class="bg-black">
 <header>
@@ -49,46 +49,26 @@ SQL;
   <table class="table table-striped table-dark">
     <thead>
     <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Sexo</th>
-      <th scope="col">Email</th>
-      <th scope="col">Telefone</th>
       <th scope="col">CEP</th>
       <th scope="col">Logradouro</th>
       <th scope="col">Cidade</th>
       <th scope="col">Estado</th>
-      <th scope="col">Peso</th>
-      <th scope="col">Altura</th>
-      <th scope="col">Tipo Sang</th>
     </tr>
     </thead>
     <tbody>
     <?php
       while ($row = $stmt->fetch()) {
-        $nome = htmlspecialchars($row['nome']);
-        $sexo = htmlspecialchars($row['sexo']);
-        $email = htmlspecialchars($row['email']);
-        $telefone = htmlspecialchars($row['telefone']);
+
         $cep = htmlspecialchars($row['cep']);
         $logradouro = htmlspecialchars($row['logradouro']);
         $cidade = htmlspecialchars($row['cidade']);
         $estado = htmlspecialchars($row['estado']);
-        $peso = htmlspecialchars($row['peso']);
-        $altura = htmlspecialchars($row['altura']);
-        $tipoSang = htmlspecialchars($row['tipo_sanguineo']);
         echo <<<HTML
           <tr>
-            <td>$nome</td>
-            <td>$sexo</td>
-            <td>$email</td>
-            <td>$telefone</td>
             <td>$cep</td>
             <td>$logradouro</td>
             <td>$cidade</td>
             <td>$estado</td>
-            <td>$peso</td>
-            <td>$altura</td>
-            <td>$tipoSang</td>
           </tr>
         HTML;
       }
