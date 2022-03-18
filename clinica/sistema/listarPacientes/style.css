@@ -1,0 +1,25 @@
+header img {
+  filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(161deg) brightness(99%)
+    contrast(108%);
+}
+
+main {
+  padding-bottom: 10%;
+}
+
+.navbar-text {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-text img {
+  padding-right: 4px;
+}
+
+main > h1 {
+  color: white;
+  font-size: 32px;
+}
